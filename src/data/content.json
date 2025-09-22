@@ -1,0 +1,55 @@
+{
+  "layout": {
+    "navigation": [
+      { "id": "home", "href": "/" },
+      { "id": "myHealth", "href": "/health" },
+      { "id": "records", "href": "/records" },
+      { "id": "askAI", "href": "/ai" },
+      { "id": "myPlanner", "href": "/planner" },
+      { "id": "healthCenters", "href": "/healthcenter" }
+    ],
+    "languageSelector": {
+      "label": "Language",
+      "options": [
+        { "value": "en", "label": "English" },
+        { "value": "hi", "label": "हिन्दी" },
+        { "value": "es", "label": "Español" },
+        { "value": "fr", "label": "Français" }
+      ]
+    }
+  },
+  "translations": {
+    "en": {
+      "home": "Home",
+      "myHealth": "My Health",
+      "records": "Records",
+      "askAI": "Ask AI",
+      "myPlanner": "My Planner",
+      "healthCenters": "Health Centers"
+    },
+    "hi": {
+      "home": "होम",
+      "myHealth": "मेरा स्वास्थ्य",
+      "records": "रिकॉर्ड्स",
+      "askAI": "AI से पूछें",
+      "myPlanner": "मेरा नियोजन",
+      "healthCenters": "स्वास्थ्य केंद्र"
+    },
+    "es": {
+      "home": "Inicio",
+      "myHealth": "Mi Salud",
+      "records": "Registros",
+      "askAI": "Preguntar a IA",
+      "myPlanner": "Mi Planificador",
+      "healthCenters": "Centros de Salud"
+    },
+    "fr": {
+      "home": "Accueil",
+      "myHealth": "Ma Santé",
+      "records": "Dossiers",
+      "askAI": "Demander à l'IA",
+      "myPlanner": "Mon Planificateur",
+      "healthCenters": "Centres de Santé"
+    }
+  }
+}

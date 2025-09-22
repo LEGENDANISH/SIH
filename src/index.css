@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Health App Primary - Soft Pink */
+    --primary: 345 87% 75%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 345 87% 85%;
+
+    /* Health App Secondary - Light Pink */
+    --secondary: 345 25% 95%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    /* Health App Muted - Soft Gray */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Health App Accent - Light Blue */
+    --accent: 198 87% 75%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 80%;
+    --input: 220 13% 91%;
+    --ring: 345 87% 75%;
+
+    /* Health App Specific Colors */
+    --health-pink: 345 87% 75%;
+    --health-pink-light: 345 25% 95%;
+    --health-blue: 198 87% 75%;
+    --health-background: 345 15% 98%;
+    --health-wave: 345 25% 96%;
+
+    /* Gradients */
+    --gradient-health: linear-gradient(135deg, hsl(var(--health-pink) / 0.1), hsl(var(--health-blue) / 0.1));
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-soft: linear-gradient(180deg, hsl(var(--background)), hsl(var(--health-background)));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(var(--health-pink) / 0.1);
+    --shadow-card: 0 2px 12px hsl(0 0% 0% / 0.08);
+    --shadow-glow: 0 0 30px hsl(var(--health-pink) / 0.2);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 345 87% 75%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 345 87% 85%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 198 87% 75%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 345 87% 75%;
+
+    /* Dark mode health colors */
+    --health-pink: 345 87% 75%;
+    --health-pink-light: 217.2 32.6% 17.5%;
+    --health-blue: 198 87% 75%;
+    --health-background: 222.2 84% 4.9%;
+    --health-wave: 217.2 32.6% 17.5%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Health App Specific Styles */
+  .health-wave-bg {
+    background: hsl(var(--health-background));
+    position: relative;
+  }
+
+  .health-wave-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: var(--gradient-health);
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  .health-card {
+    @apply bg-card border border-border/50 rounded-2xl p-6;
+    box-shadow: var(--shadow-card);
+  }
+
+  .health-button-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground;
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s ease;
+  }
+
+  .health-button-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .health-search {
+    @apply bg-white border border-border rounded-3xl px-6 py-4;
+    box-shadow: var(--shadow-card);
+  }
+
+  .health-gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
