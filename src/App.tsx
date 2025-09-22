@@ -10,7 +10,8 @@ import AI from "./pages/AI";
 import Planner from "./pages/Planner";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
-import HealthCenter from "./HealthCenter"; // fixed import path
+import HealthCenter from "./HealthCenter"; 
+import HealthAuth from "./HealthAuth";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          {/* All routes that should have Header + Footer */}
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="health" element={<Health />} />
@@ -29,6 +31,11 @@ const App = () => (
             <Route path="healthcenter" element={<HealthCenter />} />
             <Route path="profile" element={<Profile />} />
           </Route>
+
+          {/* Auth route WITHOUT Layout (no Header/Footer) */}
+          <Route path="auth" element={<HealthAuth />} />
+
+          {/* Fallback */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

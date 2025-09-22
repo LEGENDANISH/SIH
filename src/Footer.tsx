@@ -3,14 +3,18 @@ import { Link, useLocation } from "react-router-dom";
 const Footer = () => {
   const location = useLocation();
 
-  // Footer navigation links
+  // Main footer links (all except auth)
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "My Health", href: "/health" },
-    { name: "My Planner", href: "/planner" },
+    { name: "Records", href: "/records" }, // you had this in Layout but not in Footer
     { name: "Ask AI", href: "/ai" },
+    { name: "My Planner", href: "/planner" },
+    { name: "Health Centers", href: "/healthcenter" },
+    { name: "Profile", href: "/profile" },
   ];
 
+  // Support section
   const supportLinks = [
     { name: "Contact Us", href: "/contact" },
     { name: "Help", href: "/help" },
